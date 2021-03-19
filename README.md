@@ -34,4 +34,5 @@ Las preguntas y respuestas de la versión inicial se encuentran en el archivo qu
 - Carlos Martínez
 - Álvaro Redondo
 - Jaime Rodríguez
+- Miguel Sánchez
 - Mikel San Vicente
