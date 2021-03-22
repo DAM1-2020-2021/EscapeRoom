@@ -22,13 +22,12 @@ public class EscapeRoom {
 
     //----------------Methods-----------------//
 
-    public QuestionAnswer currentQuestion(String answer) {
-        QuestionAnswer question = new QuestionAnswer(null, null);
-        if(question.checkQuestion(answer)){
-            questionCounter++;
+    public QuestionAnswer currentQuestion(List<QuestionAnswer> questions, int index) {
+        if (questions.isEmpty()) {
+            return null;
         }
+        return questions.get(index);
 
-        return question;
     }
 
 

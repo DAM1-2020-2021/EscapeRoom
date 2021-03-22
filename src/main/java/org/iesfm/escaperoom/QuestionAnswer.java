@@ -8,24 +8,20 @@ public class QuestionAnswer {
     private String answer;
 
 
-
-
     public QuestionAnswer(String question, String answer) {
         this.question = question;
         this.answer = answer;
     }
 
 
-
-    public boolean checkQuestion(String answer){
+    public boolean checkQuestion(String answer) {
         boolean found = false;
-        if (getAnswer().equalsIgnoreCase((answer)) && getAnswer() != null){
+        if (getAnswer().equalsIgnoreCase(answer)) {
             found = true;
         }
+
         return found;
     }
-
-
 
 
     public String getQuestion() {
