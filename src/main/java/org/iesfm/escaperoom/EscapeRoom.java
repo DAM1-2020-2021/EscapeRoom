@@ -7,15 +7,18 @@ public class EscapeRoom {
     private String playerName;
     private String welcomeMsg;
     private List<QuestionAnswer> questionAnswerList;
+    private int questionCounter;
 
 
     //Constructor
 
-    public EscapeRoom(String playerName, String welcomeMsg, List<QuestionAnswer> questionAnswerList) {
+    public EscapeRoom(String playerName, String welcomeMsg, List<QuestionAnswer> questionAnswerList, int questionCounter) {
         this.playerName = playerName;
         this.welcomeMsg = welcomeMsg;
         this.questionAnswerList = questionAnswerList;
+        this.questionCounter = questionCounter;
     }
+
 
     //----------------Methods-----------------//
 
@@ -23,6 +26,7 @@ public class EscapeRoom {
 
 
     //--------------------GETTERS--SETTERS----HASHCODE------EQUALS---------------------//
+
 
     public String getPlayerName() {
         return playerName;
@@ -48,17 +52,25 @@ public class EscapeRoom {
         this.questionAnswerList = questionAnswerList;
     }
 
+    public int getQuestionCounter() {
+        return questionCounter;
+    }
+
+    public void setQuestionCounter(int questionCounter) {
+        this.questionCounter = questionCounter;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         EscapeRoom that = (EscapeRoom) o;
-        return Objects.equals(playerName, that.playerName) && Objects.equals(welcomeMsg, that.welcomeMsg) && Objects.equals(questionAnswerList, that.questionAnswerList);
+        return questionCounter == that.questionCounter && Objects.equals(playerName, that.playerName) && Objects.equals(welcomeMsg, that.welcomeMsg) && Objects.equals(questionAnswerList, that.questionAnswerList);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(playerName, welcomeMsg, questionAnswerList);
+        return Objects.hash(playerName, welcomeMsg, questionAnswerList, questionCounter);
     }
 
     @Override
@@ -67,6 +79,7 @@ public class EscapeRoom {
                 "playerName='" + playerName + '\'' +
                 ", welcomeMsg='" + welcomeMsg + '\'' +
                 ", questionAnswerList=" + questionAnswerList +
+                ", questionCounter=" + questionCounter +
                 '}';
     }
 }
