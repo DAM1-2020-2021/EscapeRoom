@@ -15,6 +15,19 @@ public class QuestionAnswer {
         this.answer = answer;
     }
 
+
+
+    public boolean checkQuestion(String answer){
+        boolean found = false;
+        if (getAnswer().equalsIgnoreCase((answer))){
+            found = true;
+        }
+        return found;
+    }
+
+
+
+
     public String getQuestion() {
         return question;
     }
@@ -30,9 +43,6 @@ public class QuestionAnswer {
     public void setAnswer(String answer) {
         this.answer = answer;
     }
-
-
-
 
 
     @Override
