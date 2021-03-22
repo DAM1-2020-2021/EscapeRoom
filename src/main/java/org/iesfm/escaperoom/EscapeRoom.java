@@ -22,9 +22,10 @@ public class EscapeRoom {
 
     //----------------Methods-----------------//
 
-public QuestionAnswer currentQuestion (int questionCounter){
+    public QuestionAnswer currentQuestion(int questionCounter) {
+        
         return null;
-}
+    }
 
 
     //--------------------GETTERS--SETTERS----HASHCODE------EQUALS---------------------//

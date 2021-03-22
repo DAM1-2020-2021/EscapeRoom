@@ -5,8 +5,9 @@ import org.junit.Test;
 
 public class QuestionAnswerTest {
 
+
     @Test
-    public void correctAnswerTest(){
+    public void correctAnswerTest() {
 
         QuestionAnswer questionAnswer = new QuestionAnswer("¿Cuantas patas tiene un perro?", "4");
 
@@ -15,8 +16,9 @@ public class QuestionAnswerTest {
         Assert.assertTrue(res);
 
     }
+
     @Test
-    public void incorrectAnswerTest(){
+    public void incorrectAnswerTest() {
 
         QuestionAnswer questionAnswer = new QuestionAnswer("¿Cuantas patas tiene un perro?", "4");
 
@@ -27,7 +29,7 @@ public class QuestionAnswerTest {
     }
 
     @Test
-    public void correctAnswerIgnoreCaseTest(){
+    public void correctAnswerIgnoreCaseTest() {
 
         QuestionAnswer questionAnswer = new QuestionAnswer("¿Cuantas patas tiene un perro?", "CUATRO");
 
@@ -36,8 +38,4 @@ public class QuestionAnswerTest {
         Assert.assertTrue(res);
 
     }
-
-
-
-
 }
