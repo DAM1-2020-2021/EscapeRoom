@@ -19,7 +19,7 @@ public class QuestionAnswer {
 
     public boolean checkQuestion(String answer){
         boolean found = false;
-        if (getAnswer().equalsIgnoreCase((answer))){
+        if (getAnswer().equalsIgnoreCase((answer)) && getAnswer() != null){
             found = true;
         }
         return found;
