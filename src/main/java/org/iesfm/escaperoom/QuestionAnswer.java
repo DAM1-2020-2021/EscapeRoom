@@ -7,12 +7,14 @@ public class QuestionAnswer {
     private String question;
     private String answer;
 
+    //Constructor
 
     public QuestionAnswer(String question, String answer) {
         this.question = question;
         this.answer = answer;
     }
 
+    //----------------Methods-----------------//
 
     public boolean checkQuestion(String answer) {
         boolean found = false;
@@ -23,6 +25,8 @@ public class QuestionAnswer {
         return found;
     }
 
+
+    //--------------------GETTERS--SETTERS----HASHCODE------EQUALS---------------------//
 
     public String getQuestion() {
         return question;

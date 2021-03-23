@@ -27,6 +27,16 @@ public class EscapeRoom {
 
     }
 
+    public boolean correctAnswer(String answer){
+        boolean correct = ;
+        for (QuestionAnswer questionAnswer : questionAnswerList){
+            if (questionAnswer.checkQuestion(answer) == true){
+                correct = true;
+            }
+        }
+        return correct;
+    }
+
     public boolean isFinished() {
         boolean finished = false;
         if (currentQuestion == questionAnswerList.size() - 1) {
