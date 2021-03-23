@@ -28,11 +28,14 @@ public class EscapeRoom {
     }
 
     public boolean correctAnswer(String answer){
+        currentQuestion = questionAnswerList.listIterator().nextIndex();
+
         QuestionAnswer questionAnswer = currentQuestion();
         boolean found = false;
+
         if (questionAnswer.checkQuestion(answer)){
             found = true;
-            currentQuestion++;
+
         }
         return found;
     }
