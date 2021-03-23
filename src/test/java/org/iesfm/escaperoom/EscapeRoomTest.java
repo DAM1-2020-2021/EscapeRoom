@@ -108,24 +108,24 @@ public class EscapeRoomTest {
 
         Assert.assertTrue(res);
     }
-
-    @Test
-    public void incorrectQuestionTest(){
-
-        List<QuestionAnswer> questions = new LinkedList<>();
-        QuestionAnswer question0 = new QuestionAnswer("Cual era el nombre del caballo de Don Quijote?", "Rocinante");
-        QuestionAnswer question1 = new QuestionAnswer("Que tipo de animal es una araña?", "Aracnido");
-        QuestionAnswer question2 = new QuestionAnswer("Cual es el nombre de nuestra estrella?", "Sol");
-        QuestionAnswer question3 = new QuestionAnswer("Que va despues del cuatro?", "cinco");
-        QuestionAnswer question4 = new QuestionAnswer("Que representa la marca Apple?", "manzana");
-
-        int currentQuestion = 2;
-
-        EscapeRoom escapeRoom = new EscapeRoom("Ramiro", "Bienvenido Ramiro", questions, currentQuestion);
-
-        boolean res = escapeRoom.correctAnswer("Rocinante");
-
-        Assert.assertTrue(res);
-    }
+//
+//    @Test
+//    public void incorrectQuestionTest(){
+//
+//        List<QuestionAnswer> questions = new LinkedList<>();
+//        QuestionAnswer question0 = new QuestionAnswer("Cual era el nombre del caballo de Don Quijote?", "Rocinante");
+//        QuestionAnswer question1 = new QuestionAnswer("Que tipo de animal es una araña?", "Aracnido");
+//        QuestionAnswer question2 = new QuestionAnswer("Cual es el nombre de nuestra estrella?", "Sol");
+//        QuestionAnswer question3 = new QuestionAnswer("Que va despues del cuatro?", "cinco");
+//        QuestionAnswer question4 = new QuestionAnswer("Que representa la marca Apple?", "manzana");
+//
+//        int currentQuestion = 2;
+//
+//        EscapeRoom escapeRoom = new EscapeRoom("Ramiro", "Bienvenido Ramiro", questions, currentQuestion);
+//
+//        boolean res = escapeRoom.correctAnswer("Rocinante");
+//
+//        Assert.assertTrue(res);
+//    }
 
 }

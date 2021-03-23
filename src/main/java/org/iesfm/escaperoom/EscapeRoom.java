@@ -28,13 +28,13 @@ public class EscapeRoom {
     }
 
     public boolean correctAnswer(String answer){
-        boolean correct = ;
-        for (QuestionAnswer questionAnswer : questionAnswerList){
-            if (questionAnswer.checkQuestion(answer) == true){
-                correct = true;
-            }
+        QuestionAnswer questionAnswer = currentQuestion();
+        boolean found = false;
+        if (questionAnswer.checkQuestion(answer)){
+            found = true;
+            currentQuestion++;
         }
-        return correct;
+        return found;
     }
 
     public boolean isFinished() {
