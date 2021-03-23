@@ -27,6 +27,14 @@ public class EscapeRoom {
 
     }
 
+    public boolean isFinished() {
+        boolean finished = false;
+        if (currentQuestion == questionAnswerList.size() - 1) {
+            finished = true;
+        }
+        return finished;
+    }
+
 
     //--------------------GETTERS--SETTERS----HASHCODE------EQUALS---------------------//
 
