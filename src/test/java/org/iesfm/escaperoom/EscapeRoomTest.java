@@ -106,11 +106,11 @@ public class EscapeRoomTest {
         questions.add(3, question3);
         questions.add(4, question4);
 
-        int currentQuestion = 4;
+        int currentQuestion = 2;
 
         EscapeRoom escapeRoom = new EscapeRoom("Ramiro", "Bienvenido Ramiro", questions, currentQuestion);
 
-        boolean res = escapeRoom.correctAnswer("manzana");
+        boolean res = escapeRoom.correctAnswer("Sol");
 
         Assert.assertTrue(res);
     }

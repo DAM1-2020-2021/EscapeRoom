@@ -26,31 +26,30 @@ public class EscapeRoom {
         return questionAnswerList.get(currentQuestion);
 
     }
-//  MODELO 1
+////  MODELO 1
 //    public boolean correctAnswer(String answer){
-//        currentQuestion = questionAnswerList.indexOf(0);
-//
-//        QuestionAnswer questionAnswer = currentQuestion();
 //        boolean found = false;
-//
-//        if (questionAnswer.checkQuestion(answer)){
-//            found = true;
-//
+//        for(QuestionAnswer questionAnswer : questionAnswerList) {
+//            questionAnswer = currentQuestion();
+//            if (questionAnswer.checkQuestion(answer)) {
+//                currentQuestion++;
+//                found = true;
+//            }
 //        }
 //        return found;
 //    }
 
 
-    
 
-    //  MODELO 2
-    //     public QuestionAnswer correctAnswer(String answer){
-    //        QuestionAnswer questionAnswer = currentQuestion();
-    //        if (questionAnswer.checkQuestion(answer)){
-    //            currentQuestion++;
-    //        }
-    //        return questionAnswer;
-    //    }
+
+//      MODELO 2
+//         public QuestionAnswer correctAnswer(String answer){
+//            QuestionAnswer questionAnswer = currentQuestion();
+//            if (questionAnswer.checkQuestion(answer)){
+//                currentQuestion++;
+//            }
+//            return questionAnswer;
+//        }
 
     public boolean isFinished() {
         boolean finished = false;
