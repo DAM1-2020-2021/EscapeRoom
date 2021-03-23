@@ -7,7 +7,7 @@ public class EscapeRoom {
     private String playerName;
     private String welcomeMsg;
     private List<QuestionAnswer> questionAnswerList;
-    private int questionCounter;
+    private int currentQuestion;
 
 
     //Constructor
@@ -16,17 +16,14 @@ public class EscapeRoom {
         this.playerName = playerName;
         this.welcomeMsg = welcomeMsg;
         this.questionAnswerList = questionAnswerList;
-        this.questionCounter = questionCounter;
+        this.currentQuestion = questionCounter;
     }
 
 
     //----------------Methods-----------------//
 
-    public QuestionAnswer currentQuestion(List<QuestionAnswer> questions, int index) {
-        if (questions.isEmpty()) {
-            return null;
-        }
-        return questions.get(index);
+    public QuestionAnswer currentQuestion() {
+        return questionAnswerList.get(currentQuestion);
 
     }
 
@@ -58,12 +55,12 @@ public class EscapeRoom {
         this.questionAnswerList = questionAnswerList;
     }
 
-    public int getQuestionCounter() {
-        return questionCounter;
+    public int getCurrentQuestion() {
+        return currentQuestion;
     }
 
-    public void setQuestionCounter(int questionCounter) {
-        this.questionCounter = questionCounter;
+    public void setCurrentQuestion(int currentQuestion) {
+        this.currentQuestion = currentQuestion;
     }
 
     @Override
@@ -71,12 +68,12 @@ public class EscapeRoom {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         EscapeRoom that = (EscapeRoom) o;
-        return questionCounter == that.questionCounter && Objects.equals(playerName, that.playerName) && Objects.equals(welcomeMsg, that.welcomeMsg) && Objects.equals(questionAnswerList, that.questionAnswerList);
+        return currentQuestion == that.currentQuestion && Objects.equals(playerName, that.playerName) && Objects.equals(welcomeMsg, that.welcomeMsg) && Objects.equals(questionAnswerList, that.questionAnswerList);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(playerName, welcomeMsg, questionAnswerList, questionCounter);
+        return Objects.hash(playerName, welcomeMsg, questionAnswerList, currentQuestion);
     }
 
     @Override
@@ -85,7 +82,7 @@ public class EscapeRoom {
                 "playerName='" + playerName + '\'' +
                 ", welcomeMsg='" + welcomeMsg + '\'' +
                 ", questionAnswerList=" + questionAnswerList +
-                ", questionCounter=" + questionCounter +
+                ", questionCounter=" + currentQuestion +
                 '}';
     }
 }

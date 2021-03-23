@@ -30,7 +30,7 @@ public class EscapeRoomTest {
 
         EscapeRoom escapeRoom = new EscapeRoom("Ramiro", "Bienvenido Ramiro", questions, questionIndex);
 
-        QuestionAnswer indexQuestion = escapeRoom.currentQuestion(questions, questionIndex);
+        QuestionAnswer indexQuestion = escapeRoom.currentQuestion();
 
         QuestionAnswer nextQuestion = new QuestionAnswer("Cual es el nombre de nuestra estrella?", null);
 
