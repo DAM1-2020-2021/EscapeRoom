@@ -1,9 +1,15 @@
 package org.iesfm.escaperoom;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.List;
 import java.util.Objects;
 
 public class EscapeRoom {
+
+    private static final Logger log = LoggerFactory.getLogger(EscapeRoom.class);
+
     private String playerName;
     private String welcomeMsg;
     private List<QuestionAnswer> questionAnswerList;
@@ -26,20 +32,25 @@ public class EscapeRoom {
         return questionAnswerList.get(currentQuestion);
 
     }
-////  MODELO 1
-//    public boolean correctAnswer(String answer){
-//        boolean found = false;
-//        for(QuestionAnswer questionAnswer : questionAnswerList) {
-//            questionAnswer = currentQuestion();
-//            if (questionAnswer.checkQuestion(answer)) {
-//                currentQuestion++;
-//                found = true;
-//            }
-//        }
-//        return found;
-//    }
 
+    public void info(){
+        log.info("Bienvenido " + playerName);
+        log.info(welcomeMsg);
+    }
 
+    // MODELO 1
+
+    public boolean correctAnswer(String answer) {
+        boolean found = false;
+        for (QuestionAnswer questionAnswer : questionAnswerList) {
+            questionAnswer = currentQuestion();
+            if (questionAnswer.checkQuestion(answer)) {
+                currentQuestion++;
+                found = true;
+            }
+        }
+        return found;
+    }
 
 
 //      MODELO 2
