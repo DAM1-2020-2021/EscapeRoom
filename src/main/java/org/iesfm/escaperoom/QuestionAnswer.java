@@ -1,6 +1,7 @@
 package org.iesfm.escaperoom;
 
 import java.util.Objects;
+import java.util.StringTokenizer;
 
 public class QuestionAnswer {
 
@@ -23,6 +24,18 @@ public class QuestionAnswer {
         }
 
         return found;
+    }
+
+    public int[] numLettersPerWordInAnswer(String answer) {
+
+        //answers = la respuesta
+
+        String[] arrayAnswer = answer.split(" ");
+        int[] numeroPalabras = new int[arrayAnswer.length];
+        for (int i = 0; i < numeroPalabras.length; i++) {
+            numeroPalabras[i] = arrayAnswer[i].length();
+        }
+        return numeroPalabras;
     }
 
 

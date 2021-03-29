@@ -59,14 +59,6 @@ public class EscapeRoom {
     }
 
 
-//      MODELO 2
-//         public QuestionAnswer correctAnswer(String answer){
-//            QuestionAnswer questionAnswer = currentQuestion();
-//            if (questionAnswer.checkQuestion(answer)){
-//                currentQuestion++;
-//            }
-//            return questionAnswer;
-//        }
 
     public boolean isFinished() {
         boolean finished = false;
