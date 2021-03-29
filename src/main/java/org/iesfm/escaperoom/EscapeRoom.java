@@ -12,17 +12,19 @@ public class EscapeRoom {
 
     private String playerName;
     private String welcomeMsg;
+    private String congratulationsMsg;
     private List<QuestionAnswer> questionAnswerList;
     private int currentQuestion;
 
 
     //Constructor
 
-    public EscapeRoom(String playerName, String welcomeMsg, List<QuestionAnswer> questionAnswerList, int questionCounter) {
+    public EscapeRoom(String playerName, String welcomeMsg, String congratulationsMsg, List<QuestionAnswer> questionAnswerList, int currentQuestion) {
         this.playerName = playerName;
         this.welcomeMsg = welcomeMsg;
+        this.congratulationsMsg = congratulationsMsg;
         this.questionAnswerList = questionAnswerList;
-        this.currentQuestion = questionCounter;
+        this.currentQuestion = currentQuestion;
     }
 
 
@@ -33,9 +35,13 @@ public class EscapeRoom {
 
     }
 
-    public void info(){
+    public void info() {
         log.info("Bienvenido " + playerName);
         log.info(welcomeMsg);
+    }
+
+    public void congrats() {
+        log.info(congratulationsMsg);
     }
 
     // MODELO 1
@@ -44,7 +50,7 @@ public class EscapeRoom {
         boolean found = false;
         for (QuestionAnswer questionAnswer : questionAnswerList) {
             questionAnswer = currentQuestion();
-            if (questionAnswer.checkQuestion(answer)) {
+            if (questionAnswer.checkQuestion(answer) && currentQuestion < questionAnswerList.size() - 1) {
                 currentQuestion++;
                 found = true;
             }
@@ -74,6 +80,10 @@ public class EscapeRoom {
     //--------------------GETTERS--SETTERS----HASHCODE------EQUALS---------------------//
 
 
+    public static Logger getLog() {
+        return log;
+    }
+
     public String getPlayerName() {
         return playerName;
     }
@@ -88,6 +98,14 @@ public class EscapeRoom {
 
     public void setWelcomeMsg(String welcomeMsg) {
         this.welcomeMsg = welcomeMsg;
+    }
+
+    public String getCongratulationsMsg() {
+        return congratulationsMsg;
+    }
+
+    public void setCongratulationsMsg(String congratulationsMsg) {
+        this.congratulationsMsg = congratulationsMsg;
     }
 
     public List<QuestionAnswer> getQuestionAnswerList() {
@@ -111,12 +129,12 @@ public class EscapeRoom {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         EscapeRoom that = (EscapeRoom) o;
-        return currentQuestion == that.currentQuestion && Objects.equals(playerName, that.playerName) && Objects.equals(welcomeMsg, that.welcomeMsg) && Objects.equals(questionAnswerList, that.questionAnswerList);
+        return currentQuestion == that.currentQuestion && Objects.equals(playerName, that.playerName) && Objects.equals(welcomeMsg, that.welcomeMsg) && Objects.equals(congratulationsMsg, that.congratulationsMsg) && Objects.equals(questionAnswerList, that.questionAnswerList);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(playerName, welcomeMsg, questionAnswerList, currentQuestion);
+        return Objects.hash(playerName, welcomeMsg, congratulationsMsg, questionAnswerList, currentQuestion);
     }
 
     @Override
@@ -124,8 +142,9 @@ public class EscapeRoom {
         return "EscapeRoom{" +
                 "playerName='" + playerName + '\'' +
                 ", welcomeMsg='" + welcomeMsg + '\'' +
+                ", congratulationsMsg='" + congratulationsMsg + '\'' +
                 ", questionAnswerList=" + questionAnswerList +
-                ", questionCounter=" + currentQuestion +
+                ", currentQuestion=" + currentQuestion +
                 '}';
     }
 }

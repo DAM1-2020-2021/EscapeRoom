@@ -28,7 +28,7 @@ public class EscapeRoomTest {
 
         int questionIndex = 2;
 
-        EscapeRoom escapeRoom = new EscapeRoom("Ramiro", "Bienvenido Ramiro", questions, questionIndex);
+        EscapeRoom escapeRoom = new EscapeRoom("Ramiro", "Bienvenido Ramiro", "Enhorabuena!!!", questions, questionIndex);
 
         QuestionAnswer indexQuestion = escapeRoom.currentQuestion();
 
@@ -39,7 +39,7 @@ public class EscapeRoomTest {
     }
 
     @Test
-    public void isFinishedTest(){
+    public void isFinishedTest() {
 
         List<QuestionAnswer> questions = new LinkedList<>();
         QuestionAnswer question0 = new QuestionAnswer("Cual era el nombre del caballo de Don Quijote?", "Rocinante");
@@ -57,7 +57,7 @@ public class EscapeRoomTest {
 
         int currentQuestion = 4;
 
-        EscapeRoom escapeRoom = new EscapeRoom("Ramiro", "Bienvenido Ramiro", questions, currentQuestion);
+        EscapeRoom escapeRoom = new EscapeRoom("Ramiro", "Bienvenido Ramiro", "Enhorabuena!!!", questions, currentQuestion);
 
         boolean res = escapeRoom.isFinished();
 
@@ -65,7 +65,7 @@ public class EscapeRoomTest {
     }
 
     @Test
-    public void isNotFinishedTest(){
+    public void isNotFinishedTest() {
 
         List<QuestionAnswer> questions = new LinkedList<>();
         QuestionAnswer question0 = new QuestionAnswer("Cual era el nombre del caballo de Don Quijote?", "Rocinante");
@@ -83,7 +83,7 @@ public class EscapeRoomTest {
 
         int currentQuestion = 3;
 
-        EscapeRoom escapeRoom = new EscapeRoom("Ramiro", "Bienvenido Ramiro", questions, currentQuestion);
+        EscapeRoom escapeRoom = new EscapeRoom("Ramiro", "Bienvenido Ramiro", "Enhorabuena!!!", questions, currentQuestion);
 
         boolean res = escapeRoom.isFinished();
 
@@ -91,7 +91,7 @@ public class EscapeRoomTest {
     }
 
     @Test
-    public void correctQuestionTest(){
+    public void correctQuestionTest() {
 
         List<QuestionAnswer> questions = new LinkedList<>();
         QuestionAnswer question0 = new QuestionAnswer("Cual era el nombre del caballo de Don Quijote?", "Rocinante");
@@ -108,7 +108,7 @@ public class EscapeRoomTest {
 
         int currentQuestion = 2;
 
-        EscapeRoom escapeRoom = new EscapeRoom("Ramiro", "Bienvenido Ramiro", questions, currentQuestion);
+        EscapeRoom escapeRoom = new EscapeRoom("Ramiro", "Bienvenido Ramiro", "Enhorabuena!!!", questions, currentQuestion);
 
         boolean res = escapeRoom.correctAnswer("Sol");
 
@@ -116,7 +116,7 @@ public class EscapeRoomTest {
     }
 
     @Test
-    public void incorrectQuestionTest(){
+    public void incorrectQuestionTest() {
 
         List<QuestionAnswer> questions = new LinkedList<>();
         QuestionAnswer question0 = new QuestionAnswer("Cual era el nombre del caballo de Don Quijote?", "Rocinante");
@@ -133,7 +133,7 @@ public class EscapeRoomTest {
 
         int currentQuestion = 0;
 
-        EscapeRoom escapeRoom = new EscapeRoom("Ramiro", "Bienvenido Ramiro", questions, currentQuestion);
+        EscapeRoom escapeRoom = new EscapeRoom("Ramiro", "Bienvenido Ramiro", "Enhorabuena!!!", questions, currentQuestion);
 
         boolean res = escapeRoom.correctAnswer("Pedro");
 
