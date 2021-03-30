@@ -44,7 +44,6 @@ public class EscapeRoom {
         log.info(congratulationsMsg);
     }
 
-    // MODELO 1
 
     public boolean correctAnswer(String answer) {
         boolean found = false;
@@ -57,7 +56,6 @@ public class EscapeRoom {
         }
         return found;
     }
-
 
 
     public boolean isFinished() {

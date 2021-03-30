@@ -27,7 +27,7 @@ public class QuestionAnswer {
     }
 
     public int[] numLettersPerWordInAnswer(String answer) {
-        
+
         String[] answerSize = answer.split(" ");
         int[] numberWord = new int[answerSize.length];
         for (int i = 0; i < numberWord.length; i++) {
