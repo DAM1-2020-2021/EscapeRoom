@@ -55,7 +55,7 @@ public class EscapeRoomTest {
         questions.add(3, question3);
         questions.add(4, question4);
 
-        int currentQuestion = 4;
+        int currentQuestion = questions.size();
 
         EscapeRoom escapeRoom = new EscapeRoom("Ramiro", "Bienvenido Ramiro", "Enhorabuena!!!", questions, currentQuestion);
 

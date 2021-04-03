@@ -20,13 +20,13 @@ public class Main {
 
         String namePlayer = sc.nextLine();
 
-        String welcomeMsg = "Bienvenid@s! si estáis aquí es que estáis majaras!\n" +
-                "A continuación tenéis 25 minutos para descubrir al personaje secreto y\n" +
+        String welcomeMsg = "Bienvenid@! "+ namePlayer + ", si estás aquí es que estás majara!\n" +
+                "A continuación tienes 25 minutos para descubrir al personaje secreto y\n" +
                 "salir de este aula infernal...\n" +
-                "Tendréis que resolver todas las pistas, encontrar los códigos secretos e\n" +
+                "Tendrás que resolver todas las pistas, encontrar los códigos secretos e\n" +
                 "introducirlos en la pantalla para conseguir la siguiente pista y llegar a la\n" +
                 "pantalla final...\n" +
-                "¿¿¿PREPARAD@S????";
+                "¿¿¿PREPARAD@????";
 
         List<QuestionAnswer> questions = new LinkedList<>();
 
@@ -35,7 +35,8 @@ public class Main {
         QuestionAnswer questionAnswer2 = new QuestionAnswer("Ha destacado como...", "Activista");
         QuestionAnswer questionAnswer3 = new QuestionAnswer("Este objeto la representa", "Velo Islamico");
         QuestionAnswer questionAnswer4 = new QuestionAnswer("Ha conseguido un reconocimiento muy importante...", "Premio nobel");
-        QuestionAnswer questionAnswer5 = new QuestionAnswer("¿Ya sabéis quién es?", "Malala Yousafzai");
+        QuestionAnswer questionAnswer5 = new QuestionAnswer("¿Ya sabes quién es?", "Malala Yousafzai");
+
 
         questions.add(questionAnswer0);
         questions.add(questionAnswer1);
@@ -44,7 +45,8 @@ public class Main {
         questions.add(questionAnswer4);
         questions.add(questionAnswer5);
 
-        EscapeRoom escapeRoom = new EscapeRoom(namePlayer, welcomeMsg, "Enhorabuena!!!", questions, 0);
+
+        EscapeRoom escapeRoom = new EscapeRoom(namePlayer, welcomeMsg, "Enhorabuena " + namePlayer + "!!" + ". Pero la próxima vez, no seré tan benévolo...MWAHAHAHA", questions, 0);
 
         escapeRoom.info();
 

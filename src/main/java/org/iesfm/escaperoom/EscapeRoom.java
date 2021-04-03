@@ -36,7 +36,7 @@ public class EscapeRoom {
     }
 
     public void info() {
-        log.info("Bienvenido " + playerName);
+//        log.info("Bienvenido " + playerName);
         log.info(welcomeMsg);
     }
 
@@ -47,20 +47,19 @@ public class EscapeRoom {
 
     public boolean correctAnswer(String answer) {
         boolean found = false;
-        for (QuestionAnswer questionAnswer : questionAnswerList) {
-            questionAnswer = currentQuestion();
-            if (questionAnswer.checkQuestion(answer) && currentQuestion < questionAnswerList.size() - 1) {
+        QuestionAnswer questionAnswer = currentQuestion();
+            if (questionAnswer.checkQuestion(answer) && currentQuestion <= questionAnswerList.size() - 1) {
                 currentQuestion++;
                 found = true;
             }
-        }
+
         return found;
     }
 
 
     public boolean isFinished() {
         boolean finished = false;
-        if (currentQuestion == questionAnswerList.size() - 1) {
+        if (currentQuestion == questionAnswerList.size()) {
             finished = true;
         }
         return finished;
