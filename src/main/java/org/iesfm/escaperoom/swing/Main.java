@@ -44,7 +44,7 @@ public class Main {
         questions.add(questionAnswer4);
         questions.add(questionAnswer5);
 
-        EscapeRoom escapeRoom = new EscapeRoom(namePlayer, welcomeMsg, "Enhorabuena!!!", questions, 0);
+        EscapeRoom escapeRoom = new EscapeRoom(namePlayer, welcomeMsg, "Enhorabuena!! Pero la próxima vez, no seré tan benévolo...MWAHAHAHA", questions, 0);
 
         SwingEscapeRoom consoleEscapeRoom = new SwingEscapeRoom(escapeRoom);
 
