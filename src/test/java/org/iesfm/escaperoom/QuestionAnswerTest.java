@@ -44,11 +44,11 @@ public class QuestionAnswerTest {
 
         QuestionAnswer questionAnswer = new QuestionAnswer("¿Cuantas patas tiene un perro?", " tiene cuatro patas");
 
+        int [] actual = {5,6,5};
+
         int [] expected = questionAnswer.numLettersPerWordInAnswer("tiene cuatro patas");
 
-        int [] res = {5,6,5};
-
-        Assert.assertArrayEquals(expected, res);
+        Assert.assertArrayEquals(expected, actual);
 
     }
 
@@ -58,11 +58,11 @@ public class QuestionAnswerTest {
 
         QuestionAnswer questionAnswer = new QuestionAnswer("¿Cuantas patas tiene un perro?", "cuatro");
 
+        int [] actual = {6};
+
         int [] expected = questionAnswer.numLettersPerWordInAnswer("cuatro");
 
-        int [] res = {6};
-
-        Assert.assertArrayEquals(expected, res);
+        Assert.assertArrayEquals(expected, actual);
 
     }
 
