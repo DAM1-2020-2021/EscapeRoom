@@ -19,8 +19,7 @@ public class SwingEscapeRoom extends JFrame {
 
     public SwingEscapeRoom(EscapeRoom escapeRoom) {
         this.escapeRoom = escapeRoom;
-        java.util.Timer t = new java.util.Timer();
-        t.schedule(new EndTask(this), 20 * 60 * 1000);
+
         init();
     }
 
@@ -33,8 +32,11 @@ public class SwingEscapeRoom extends JFrame {
 
         JOptionPane.showMessageDialog(this, escapeRoom.getWelcomeMsg());
 
+        java.util.Timer t = new java.util.Timer();
+        t.schedule(new EndTask(this), 20 * 60 * 1000);
+
         this.add(mainPanel);
-        mainPanel.setLayout(new BorderLayout());
+        mainPanel.setLayout(new GridLayout(3,1));
 
         showCurrentQuestion();
         this.validate();
@@ -82,15 +84,13 @@ public class SwingEscapeRoom extends JFrame {
         questionLabel.setHorizontalAlignment(SwingConstants.CENTER);
         questionLabel.setText(question.getQuestion());
 
-        mainPanel.add(questionLabel, BorderLayout.PAGE_START);
-        questionLabel.setBorder(new EmptyBorder(10, 10, 10, 10));
+        mainPanel.add(questionLabel);
 
-        mainPanel.setBorder(new EmptyBorder(100, 10, 100, 10));
 
         JPanel responsePanel = new JPanel();
+
         responsePanel.setAlignmentY(Component.CENTER_ALIGNMENT);
-        responsePanel.setBorder(new EmptyBorder(50, 0, 0, 0));
-        mainPanel.add(responsePanel, BorderLayout.CENTER);
+        mainPanel.add(responsePanel);
         List<List<JTextField>> responseFields = new LinkedList<>();
         for (int wordSize : question.numLettersPerWordInAnswer(question.getAnswer())) {
             List<JTextField> wordFields = new LinkedList<>();
@@ -108,7 +108,6 @@ public class SwingEscapeRoom extends JFrame {
         JPanel buttonPanel = new JPanel();
         JButton button = new JButton("Responder");
         button.setFont(font);
-        buttonPanel.setBorder(new EmptyBorder(200, 10, 200, 10));
         buttonPanel.add(button);
 
         button.addActionListener(new ActionListener() {
@@ -143,6 +142,6 @@ public class SwingEscapeRoom extends JFrame {
                 SwingEscapeRoom.this.repaint();
             }
         });
-        mainPanel.add(buttonPanel, BorderLayout.PAGE_END);
+        mainPanel.add(buttonPanel);
     }
 }
